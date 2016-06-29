@@ -40,6 +40,8 @@ use Webschuppen\WsProducts\Domain\Model\TechnicalDataValue;
 class ProductRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
     /**
+     * function to find all products for frontend
+     *
      * @param \TYPO3\CMS\Extbase\Persistence\QueryResultInterface $backenOnlyCategories
      * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
      */
@@ -66,6 +68,8 @@ class ProductRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
     }
 
     /**
+     * find all products by respüecting filters
+     *
      * @param $products
      * @param Category|boolean $category
      * @return array| json Array for Frontend
@@ -75,6 +79,7 @@ class ProductRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
         $applicationsArray = array();
         $returnArray = array();
         $technicalFilters = array();
+        $productsToSectionLength = array();
 
         /** @var Product $product */
         foreach($products as $product) {
@@ -86,13 +91,12 @@ class ProductRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
             }
         }
 
+        // if there is just one technical filter create array based on application of product
         if(count($technicalFilters) <= 1) {
-
             /** @var Product $product */
             foreach ($products as $product) {
                 /** @var TechnicalDataValue $technicalData */
                 foreach ($product->getTechnicalData() as $technicalData) {
-                    //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($technicalData);
                     if ($technicalData->getTechnicalDataName()->getIsFilter() && ($category && $product->getCategory($category))) {
                         $appUid = $technicalData->getTechnicalDataName()->getApplication()->getUid();
                         $techValue = $technicalData->getTechnicalDataValueValue();
@@ -117,6 +121,7 @@ class ProductRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
                 }
             }
 
+            // sort all applicational values
             foreach ($applicationsArray as $applicationId => $applicationValues) {
                 if (is_array($applicationValues)) {
                     ksort($applicationValues);
@@ -124,7 +129,6 @@ class ProductRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
                 $returnArray[$applicationId] = $applicationValues;
             }
         } else {
-            //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump('here');
             $productsToSectionLength = array();
 
             /** @var Product $product */
@@ -133,8 +137,7 @@ class ProductRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
                 asort($sectionLengths);
                 unset($sectionLengths[17]);
 
-                //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($sectionLengths);
-                //exit;
+                // create array of all possible products in capacities
                 foreach($sectionLengths as $key => $sectionLength) {
                     $productsToSectionLength[$key]['data']['name'] = $sectionLength['technicalData']->getTechnicalDataName()->getApplication()->getApplicationName();
                     $productsToSectionLength[$key]['data']['icon'] = $sectionLength['technicalData']->getTechnicalDataName()->getApplication()->getApplicationIcon()->getOriginalResource()->getPublicUrl();
@@ -145,13 +148,12 @@ class ProductRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
                         }
                     }
                 }
-                //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump('here');
+
+                // process the technical data objects
                 foreach ($product->getTechnicalData() as $technicalData) {
-                    //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($technicalData);
                     if ($technicalData->getTechnicalDataName()->getIsFilter()) {
                         $appUid = $technicalData->getTechnicalDataName()->getApplication()->getUid();
                         $techValue = $technicalData->getTechnicalDataValueValue();
-                        //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($technicalData);
                         if (!array_key_exists($appUid, $applicationsArray) && ($technicalData->getTechnicalDataName()->getTechnicalDataName() == 'Kapazität (kg/h)' || $technicalData->getTechnicalDataName()->getTechnicalDataName() == 'Capacity (kg/h)')) {
                             $applicationsArray['filtertext'] = $technicalData->getTechnicalDataName()->getTechnicalDataName();
                             $applicationsArray[$appUid] = array();
@@ -172,7 +174,8 @@ class ProductRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
                     }
                 }
             }
-            //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($applicationsArray);
+
+            // sort all applications
             foreach ($applicationsArray as $applicationId => $applicationValues) {
                 if (is_array($applicationValues)) {
                     ksort($applicationValues);
@@ -182,11 +185,12 @@ class ProductRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
         }
 
         $returnArray['SectionLength'] = $productsToSectionLength;
-        //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($returnArray);
         return $returnArray;
     }
 
     /**
+     * Get product description by chosen application
+     *
      * @param $product
      * @return string
      */
@@ -211,6 +215,8 @@ class ProductRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
     }
 
     /**
+     * Get URL for product with chosen application
+     *
      * @param $product $application
      * @return string
      */
@@ -231,6 +237,8 @@ class ProductRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
     }
 
     /**
+     * get an Array for json usage in AJAX requests
+     *
      * @param $product
      * @return array
      */
@@ -257,6 +265,15 @@ class ProductRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
         return $returnArray;
     }
 
+    /**
+     * Get products for compare tool
+     *
+     * @param $productUid
+     * @param $attributesArray
+     * @param $technicalDataArray
+     * @param $accessoryArray
+     * @return array
+     */
     public function getProductCompareItems($productUid, $attributesArray, $technicalDataArray, $accessoryArray) {
         $product = $this->findByUid($productUid);
         $productAttributes = $product->getAttribute();
@@ -280,6 +297,13 @@ class ProductRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
         return $newProduct;
     }
 
+    /**
+     * Create array of attributes
+     *
+     * @param $listArray
+     * @param $valueArray
+     * @return mixed
+     */
     protected function createNewAttributeArray($listArray, $valueArray) {
         foreach($listArray as $attribute => $sorting) {
             $listArray[$attribute] = 0;
@@ -292,6 +316,13 @@ class ProductRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
         return $listArray;
     }
 
+    /**
+     * Create array of accessories
+     *
+     * @param $listArray
+     * @param $valueArray
+     * @return mixed
+     */
     protected function createNewAccessoryArray($listArray, $valueArray) {
         foreach($listArray as $attribute => $sorting) {
             $listArray[$attribute] = 0;
@@ -304,6 +335,13 @@ class ProductRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
         return $listArray;
     }
 
+    /**
+     * Create array of technical data
+     *
+     * @param $listArray
+     * @param $valueArray
+     * @return mixed
+     */
     protected function createNewTechnicalDataArray($listArray, $valueArray) {
         foreach($listArray as $name => $sorting) {
             $listArray[$name] = '';
@@ -316,6 +354,12 @@ class ProductRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
         return $listArray;
     }
 
+    /**
+     * get the secional length params as sorted array
+     *
+     * @param $product
+     * @return array
+     */
     protected function getSectionLength($product) {
         $sectionLengths = array();
 

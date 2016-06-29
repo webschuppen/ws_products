@@ -1,4 +1,4 @@
-
+// function to create a slider element
 function createRightSliderElement($app2, $prevSelectedSize, $valueFilterArea, $that, $myLength, $allPossible) {
     var $slideCount = 1;
     var $ = jQuery;
@@ -134,6 +134,7 @@ function createRightSliderElement($app2, $prevSelectedSize, $valueFilterArea, $t
           $('.lableChooseKapa ol li .ws_showall').removeClass('filter_inactive');
         }
 
+        // bind click events to buttons in slider element
         $('.lableChooseKapa ol li .ws_showall').off('click');
         $('.lableChooseKapa ol li .ws_showall').on('click', function(e) {
             if(!$(this).hasClass('filter_inactive')) {
@@ -173,6 +174,7 @@ function createRightSliderElement($app2, $prevSelectedSize, $valueFilterArea, $t
             }
         });
 
+        // generate slider steps
         for ($i = 0; $i < $slideCount - 1; $i++) {
             if ($i == 0) {
                 if ($lowestValue === $selectedSize) {
