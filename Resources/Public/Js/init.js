@@ -1,3 +1,5 @@
+// Set localisation object
+// Todo: move it to outside js
 var $locallang = new Object();
 $locallang['de'] = new Object();
 $locallang['en'] = new Object();
@@ -10,6 +12,7 @@ $locallang['en']['moreThanThree'] = 'You’ve added 3 products to compare';
 $locallang['de']['alreadyInCompare'] = 'Dieses Produkt ist bereits im Vergleich';
 $locallang['en']['alreadyInCompare'] = 'You’ve added this product to compare';
 
+// set some base vars
 var $currentlangkey = document.getElementsByTagName("HTML")[0].getAttribute("lang");
 var $compareContent = '';
 var $compareButton = '<div class="wsProducts compareButtonWrapper"><a href="produkte/maschinen/vergleichsseite/?tx_wsproducts_product%5Baction%5D=compare&tx_wsproducts_product%5Bcontroller%5D=Product' + '&L=' + $('body').data('langid') + '" class="wsProducts compareButtonList">' + $locallang[$currentlangkey]['comparelist'] + '</a></div>';
@@ -17,7 +20,7 @@ var noProducts = $locallang[$currentlangkey]['noProducts'];
 var isAppReversed = new Array();
 
 
-
+// just to be sure there is jQuery in $
 (function($) {
     $(document).ready(function() {
         var $productarea = $('.filterList').html();
@@ -240,6 +243,7 @@ function ws_products_createFilter(filterObj) {
     });
 }
 
+// function to receive new links on application change
 function ws_products_getNewLinks($application) {
     var $ = jQuery;
     $('.filterListItem').addClass('ajaxCall');
@@ -263,7 +267,9 @@ function ws_products_getNewLinks($application) {
     });
 }
 
+// create the value slider for product search
 function ws_products_createSlider(applicationClick, filterObj, $prevSelectedSize, $length) {
+    var $ = jQuery;
     var $valueFilterArea = $('.productFilterSlider');
     var $slideCount = 1;
     var $that = applicationClick;
@@ -272,14 +278,14 @@ function ws_products_createSlider(applicationClick, filterObj, $prevSelectedSize
     $('.lableChooseKapa ol li .ws_showall').addClass('filter_inactive');
     $('.lableChooseKapa ol li .ws_showFiltered').addClass('filter_inactive');
 
-
+    // hide all products for beginning
     $('.filterListItem').hide();
     $('.wsProducts.productFilterIcon2').removeClass('activeApplication');
+
     //set active filter
     $('.wsProducts.productFilterIcon').each(function() {
         $(this).removeClass('activeApplication');
     });
-
     $that.addClass('activeApplication');
 
     var $app = filterObj[$that.attr('data-appid')];
@@ -287,8 +293,10 @@ function ws_products_createSlider(applicationClick, filterObj, $prevSelectedSize
         delete $app.data;
     }
 
+    // duplicate the app array for better workflows
     var $app2 = $app;
 
+    // just if ther is a slider value
     if(filterObj['SectionLength'] !== null) {
         $thirdCrit = true;
         $('.wsProducts.productFilterIcon2').addClass('showFilter');
@@ -312,6 +320,7 @@ function ws_products_createSlider(applicationClick, filterObj, $prevSelectedSize
         isAppReversed[$that.attr('data-appid')] = true;
     }
 
+    // special case if there is a third criteria
     if($thirdCrit) {
         findApplicationProducts($app2);
 
@@ -374,6 +383,7 @@ function ws_products_createSlider(applicationClick, filterObj, $prevSelectedSize
     }
 }
 
+// function to make products visible by application
 function findApplicationProducts($application) {
     var $ = jQuery;
     delete $application.data;
@@ -385,6 +395,7 @@ function findApplicationProducts($application) {
     });
 }
 
+// function to fade in a product
 function fadeInProducts(element, index, array) {
     element.prependTo(element.parent());
     element.show();
@@ -392,7 +403,6 @@ function fadeInProducts(element, index, array) {
 
 // adds a product to the compare tool
 var $compareTool = $('.compareTool');
-
 function ws_products_addCompare(productId, ajaxUrl) {
     var $ = jQuery;
     var $compareCookie = ws_products_getCookie('compare');
@@ -402,7 +412,9 @@ function ws_products_addCompare(productId, ajaxUrl) {
         $compareArray = $.parseJSON($compareCookie);
     }
 
+    // just if this product is not already in
     if (!ws_products_inArray(productId, $compareArray)) {
+        // just if there are less then 3 already in
         if($compareArray.length < 3) {
             $compareArray.push(productId);
             ws_products_setCookie('compare', JSON.stringify($compareArray), 10);
@@ -421,6 +433,7 @@ function ws_products_addCompare(productId, ajaxUrl) {
                 }
             });
         } else {
+            // if there are already 3 in compare tool throw error message
             var $errorMessage = '<span class="compareAllreadyError">' + $locallang[$currentlangkey]['moreThanThree'] + '</span>';
             $compareTool.tooltipster('content', $($errorMessage));
             $('.compareTool').tooltipster('enable');
@@ -431,6 +444,7 @@ function ws_products_addCompare(productId, ajaxUrl) {
         }
         ws_products_countCompare($compareArray);
     } else {
+        // if this product is already in throw error message
         var $errorMessage = '<span class="compareCountError">' + $locallang[$currentlangkey]['alreadyInCompare'] + '</span>';
         $compareTool.tooltipster('content', $($errorMessage));
         $('.compareTool').tooltipster('enable');
@@ -453,10 +467,6 @@ function ws_products_removeCompare(productId) {
     }
 
     $('#productHeader-' + productId).fadeOut(500).remove();
-    /*
-    $('#productFixedHeader-' + productId).fadeOut(500).remove();
-    $('#productAttributes-' + productId).fadeOut(500).remove();
-    */
     $('#productFixedHeader-' + productId).animate({'width':0},500, function() {
         $(this).remove();
     });
@@ -464,6 +474,7 @@ function ws_products_removeCompare(productId) {
         $(this).remove();
     });
 
+    // just if it is realy in the compare array
     if(ws_products_inArray(productId, $compareArray)) {
         var $index = $compareArray.indexOf(String(productId));
         if($index > -1) {
@@ -497,6 +508,7 @@ function ws_products_removeCompare(productId) {
     }
 }
 
+// function to remove all products from compare array
 function ws_products_removeAllCompare() {
     var $ = jQuery;
     $('.previewImage').each(function() {
@@ -564,6 +576,7 @@ function ws_products_openInfoTab(icon) {
 
 }
 
+// positional settings of info icons
 function infoTabCheck($infoTab) {
     $($infoTab).each(function() {
         if($(window).innerWidth() < $(this).offset().left + $(this).outerWidth(true)) {

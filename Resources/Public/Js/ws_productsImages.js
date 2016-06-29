@@ -5,7 +5,9 @@
  * http://www.webschuppen.com
  *
  * If you want to use this code within your project, please contact
- * us with an eMail to norden@webschuppen.com
+ * us with an eMail to technik@webschuppen.com
+ *
+ * Todo: more comments have to be added
  */
 
 (function($) {
