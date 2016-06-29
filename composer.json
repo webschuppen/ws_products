@@ -1,0 +1,12 @@
+{
+  "name": "webschuppen/ws_products",
+  "type": "typo3-cms-extension",
+  "description": "Product management for TYPO3",
+  "homepage": "http://www.webschuppen.com",
+  "license": ["GPL-2.0+"],
+  "keywords": ["TYPO3 CMS", "product"],
+  "support": {
+    "issues": "https://github.com/webschuppen/ws_products/issues"
+  },
+  "version": "0.0.1"
+}
