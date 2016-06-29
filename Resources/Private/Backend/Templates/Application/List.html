@@ -1,0 +1,42 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+<h1>Listing for Application</h1>
+
+<f:flashMessages />
+
+<table  class="tx_wsproducts" >
+	<tr>
+		<th><f:translate key="tx_wsproducts_domain_model_application.application_name" /></th>
+		<th><f:translate key="tx_wsproducts_domain_model_application.application_icon" /></th>
+		<th><f:translate key="tx_wsproducts_domain_model_application.special_case" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{applications}" as="application">
+		<tr>
+			<td><f:link.action action="show" arguments="{application : application}"> {application.applicationName}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{application : application}"> {application.applicationIcon.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{application : application}"> {application.specialCase}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{application : application}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{application : application}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Application</f:link.action>
+</f:section>

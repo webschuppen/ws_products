@@ -1,0 +1,72 @@
+
+<f:layout name="Default" />
+
+<f:section name="main">
+    <div class="wsProducts compareHeaderMargin"></div>
+    <div class="wsProducts compareFixedHeader">
+        <section class="regularContentArea contentCompareFixedHeader compareArea">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                    <a class="compareFixedHeaderPrint productsSprite" onClick="window.print()"></a> <a class="compareFixedHeaderDeleteAll productsSprite" onClick="ws_products_removeAllCompare()"></a>
+                </div>
+                <f:for each="{compareItemsDataArr}" as="compareItem">
+                        <div class="col-md-3 col-sm-3 col-xs-3" id="productFixedHeader-{compareItem.uid}">
+                            <h2><f:format.stripTags value="{compareItem.productName}" /></h2>
+                            <a class="wsProducts compareRemoveCompare" onClick="ws_products_removeCompare({compareItem.uid})"></a>
+                        </div>
+                </f:for>
+            </div>
+        </section>
+        <div class="row headerShadow"></div>
+    </div>
+
+    <section class="regularContentArea compareArea">
+        <div class="regularContentAreaInnerWrapper">
+            <div class="csc-default">
+                <!-- from here header area with title and image -->
+                <div class="row header">
+                    <div class="wsProducts productCompareIcons">
+                        <div class="wsProducts allCompareActions">
+                            <a class="wsProducts comparePrintList" onClick="window.print()"><span class="wsProducts printListButton productsSprite"></span> <f:translate key="tx_wsproducts_domain_model_product.print_list" /></a>
+                        </div>
+                        <div class="wsProducts allCompareActions">
+                            <a class="wsProducts compareDeleteAll" onClick="ws_products_removeAllCompare()"><span class="wsProducts deleteAllButton productsSprite"></span> <f:translate key="tx_wsproducts_domain_model_product.remove_products" /></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        &nbsp;
+                    </div>
+                    <f:for each="{compareItemsDataArr}" as="compareItem">
+                        <f:render partial="Compare/ItemHeader" arguments="{compareItem: compareItem}" />
+                    </f:for>
+                </div>
+                <div class="row headerShadow"></div>
+                <!-- from here data area -->
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <h2><f:translate key="tx_wsproducts_domain_model_product.overview" /></h2>
+                        <f:for each="{attributes}" key="attributeName" as="attribute">
+                            <div class="wsProducts compareRow"><f:format.raw>{attributeName}</f:format.raw></div>
+                        </f:for>
+                        <h2><f:translate key="tx_wsproducts_domain_model_product.accessory" /></h2>
+                        <f:for each="{accessory}" key="accessoryName" as="accessorie">
+                            <div class="wsProducts compareRow"><f:format.raw>{accessoryName}</f:format.raw></div>
+                        </f:for>
+                        <h2><f:translate key="tx_wsproducts_domain_model_product.technical_data" /></h2>
+                        <f:for each="{technicalData}" key="TechnicalDataName" as="TechData">
+                            <div class="wsProducts compareRow"><f:format.raw>{TechnicalDataName}</f:format.raw></div>
+                        </f:for>
+                    </div>
+                    <f:for each="{compareItemsDataArr}" as="compareItem">
+                        <f:render partial="Compare/ItemData" arguments="{compareItem: compareItem}" />
+                    </f:for>
+                </div>
+                <div class="row">
+                    <br>
+                    <a href="#" class="compareHistoryBack" onClick="history.back()"><f:translate key="tx_wsproducts_domain_model_product.close_compare" /></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</f:section>

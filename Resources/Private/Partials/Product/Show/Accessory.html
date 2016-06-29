@@ -1,0 +1,11 @@
+<div class="wsProducts productDetailAccessoryList">
+    <f:for each="{accessories}" as="accessory">
+        <!--f:debug>{accessory}</f:debug-->
+        <div class="wsProducts productDetailAccessoryListItem">
+            <div class="wsProducts productDetailAccessoryPreviewImage">
+                <a href="{accessory.productPreviewImage.originalResource.publicUrl}" class="lightbox"  data-fancybox-group="accessoryList"><img src="{accessory.productPreviewImage.originalResource.publicUrl}" /></a>
+            </div>
+            <div class="wsProducts productDetailAccessoryName">{accessory.productName}</div>
+        </div>
+    </f:for>
+</div>

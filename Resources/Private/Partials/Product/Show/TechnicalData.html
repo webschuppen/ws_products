@@ -1,0 +1,13 @@
+<table class="wsProducts productDetailTechnicalDataTable">
+    <f:for each="{technicalData}" as="data">
+        <f:if condition="{data.technicalDataName.onlyBackend}">
+            <f:then></f:then>
+            <f:else>
+                <tr class="wsProducts productDetailTechnicalDataRow">
+                    <td class="wsProducts productDetailTechnicalDataCell name">{data.technicalDataName.technicalDataName}</td>
+                    <td class="wsProducts productDetailTechnicalDataCell value">{data.technicalDataValueValue}</td>
+                </tr>
+            </f:else>
+        </f:if>
+    </f:for>
+</table>

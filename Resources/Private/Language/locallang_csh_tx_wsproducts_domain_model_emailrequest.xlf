@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-05-27T10:57:30Z" product-name="ws_products">
+		<header/>
+		<body>
+			<trans-unit id="e_mail_request_name.description">
+				<source>eMailRequestName</source>
+			</trans-unit>
+			<trans-unit id="e_mail_request_last_name.description">
+				<source>eMailRequestLastName</source>
+			</trans-unit>
+			<trans-unit id="e_mail_request_mail_address.description">
+				<source>eMailRequestMailAddress</source>
+			</trans-unit>
+			<trans-unit id="e_mail_request_company.description">
+				<source>eMailRequestCompany</source>
+			</trans-unit>
+			<trans-unit id="e_mail_request_street_nr.description">
+				<source>eMailRequestStreetNr</source>
+			</trans-unit>
+			<trans-unit id="e_mail_request_postal_code.description">
+				<source>eMailRequestPostalCode</source>
+			</trans-unit>
+			<trans-unit id="e_mail_request_city.description">
+				<source>eMailRequestCity</source>
+			</trans-unit>
+			<trans-unit id="e_mail_request_phone.description">
+				<source>eMailRequestPhone</source>
+			</trans-unit>
+			<trans-unit id="e_mail_request_fax.description">
+				<source>eMailRequestFax</source>
+			</trans-unit>
+			<trans-unit id="e_mail_request_message.description">
+				<source>eMailRequestMessage</source>
+			</trans-unit>
+			<trans-unit id="e_mail_request_filter_x_m_l.description">
+				<source>eMailRequestFilterXML</source>
+			</trans-unit>
+			<trans-unit id="product.description">
+				<source>product</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

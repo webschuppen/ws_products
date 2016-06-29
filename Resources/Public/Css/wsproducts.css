@@ -1,0 +1,303 @@
+/**
+*
+*   general css settings for ws_products
+*
+**/
+
+.wsProducts {
+    box-sizing: border-box;
+    position: relative;
+}
+
+.wsProducts ul {
+    list-style-type: none;
+}
+
+.wsProducts ul, .wsProducts ul > li {
+    margin: 0;
+    padding: 0;
+}
+
+/* filter list settings */
+
+.wsProducts.filterList {
+    width: 100%;
+}
+
+.wsProducts.filterListItem {
+    background: rgb(255,255,255);
+    width: 31.954887218045116%;
+    margin-right: 2.067669172932335%;
+}
+
+.wsProducts.filterListItem .ajaxLoader {
+    display: none;
+    background-image: url("../Icons/ajax-loader.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.wsProducts.filterListItem.ajaxCall {
+    opacity: 0.5;
+}
+
+.wsProducts.filterListItem.ajaxCall .ajaxLoader {
+    display: block;
+}
+
+.wsProducts.filterListItem > a {
+    padding: 10px;
+    display: block;
+}
+
+.wsProducts.filterListItem:nth-child(3n) {
+    margin-right: 0;
+}
+
+.wsProducts.filterListInfos .wsProducts.filterListControls {
+    float: right;
+}
+
+.wsProducts.filterListImage img {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+}
+
+.wsProducts.filterListInfos {
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.wsProducts.FilterListInfoButton {
+    margin-right: 5px;
+}
+
+/* product detail settings */
+.wsProducts.productDetail {
+    width: 100%;
+}
+
+.wsProducts.productDetailTeaser {
+    width: 100%;
+    background-size: cover;
+    background-position: center 0;
+}
+
+.wsProducts.productDetailInfoIcons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 400;
+}
+
+.wsProducts.productDetailInfoIconsItem {
+    position: absolute;
+}
+
+/*
+.wsProducts.productDetailDetails > div {
+    float: left;
+    width: 31.954887218045116%;
+    margin-right: 2.067669172932335%;
+}
+*/
+
+.wsProducts.productDetailDetails > div:nth-child(3n) {
+    margin-right: 0;
+}
+
+.wsProducts.productDetailDetailsAttributes .wsProducts.productDetailsAttributesList {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.wsProducts.productImagePreviewBig {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.wsProducts.previewImageBigContainer {
+    background-color: rgb(255,255,255);
+}
+
+.wsProducts.productImagePreviewBig img {
+    width: 100%;
+    height: auto;
+}
+
+.wsProducts.previewImage {
+    border: 1px solid rgb(0,0,0);
+}
+.wsProducts.previewImage.activeImage {
+    border: 1px solid rgb(255,0,0);
+}
+
+.wsProducts.productFilterIcon {
+    border: 1px solid rgba(0,0,0,0);
+    cursor: pointer;
+
+    -webkit-transition: all 0.5s ease-out 0s;
+    -moz-transition: all 0.5s ease-out 0s;
+    -ms-transition: all 0.5s ease-out 0s;
+    -o-transition: all 0.5s ease-out 0s;
+    transition: all 0.5s ease-out 0s;
+}
+
+.wsProducts.productFilterIcon:hover {
+    opacity: 0.7;
+}
+
+.wsProducts.productFilterIcon.activeApplication {
+    border: 1px solid rgb(255,0,0);
+}
+
+.wsProducts.productFilterInner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.wsProducts.productFilterLeft {
+    width: 40%;
+    padding-right: 20px;
+}
+
+.wsProducts.productFilterRight {
+    width: 60%;
+}
+
+.wsProducts.productFilterRight select{
+    display: none;
+}
+
+.wsProducts.filterValueTop {
+    position: absolute;
+    top: -35px;
+}
+
+/* set the floats */
+.wsProducts.filterListItem, .wsProducts.filterListInfos .wsProducts.filterListTitle, .wsProducts.productFilterLeft, .wsProducts.productFilterRight, .wsProducts.compareAddItem {
+    float: left;
+}
+
+/* clear the floats */
+.wsProducts.filterList:after, .wsProducts.filterListInfos:after, .wsProducts.filterListControls:after, .wsProducts.productDetailDetails:after, .wsProducts.productFilter:after, .wsProducts.compareAddItem:after, .wsProducts.productDetailDetailsImages:after  {
+    content: ".";
+    clear: both;
+    display: block;
+    visibility: hidden;
+    height: 0px;
+}
+
+.wsProducts.compareAddItem a {
+    display: block;
+    width: 100%;
+}
+
+.wsProducts.compareRow {
+    width: 100%;
+    height: 30px;
+    border: 1px solid black;
+    margin-bottom: 5px;
+}
+
+.wsProducts.productDetailTeaser {
+    background-size: 100% 100%;
+}
+
+.wsProducts.productDetailInfoIconsItemOpen {
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    line-height: 36px;
+    font-size: 0;
+}
+
+.wsProducts.productDetailInfoIconsItemContent {
+    display: none;
+}
+
+.wsProducts.productDetailTeaserHeadingContainer {
+    /* position: absolute; */
+}
+
+#resetFilter {
+    position: absolute;
+    top: 16px;
+    right: 15px;
+    cursor:pointer;
+}
+
+.wsProducts.productDetailDetailsImages {
+    min-height: 1px;
+    z-index: 1;
+}
+
+.wsProducts.productDetailAccessoryListItem,
+.wsProducts.productDetailAccessoryPreviewImage, .wsProducts.productDetailAccessoryPreviewImage img   {
+    height: 192px;
+    width: 277px;
+    /*width: auto !important;*/
+}
+
+.wsProducts.productDetailDetailsImageSlider > * {
+    position: absolute;
+    opacity: 0;
+}
+
+.wsProducts.productDetailAccessorySlider {
+    max-height: 200px;
+    overflow: hidden;
+    opacity: 0;
+}
+.wsProducts.imageCaption {
+    font-family: "NeoTechStd-MediumItalic";
+    background-color: rgba(255, 255, 255, 0.8);
+    line-height: 25px;
+    padding: 12px 15px;
+    width: 100%;
+    font-size: 20px;
+    font-color: rgb(57,47,44);
+}
+
+.wsProducts .imageDesc {
+  font-family: "NeoTechStd-Regular",​Arial,​sans-serif;
+  font-size: 15px;
+}
+
+.wsProducts.product75 .backAnkerDetails {
+    display:none;
+}
+
+.ws_showall, .ws_showFiltered {
+    cursor: pointer;
+}
+
+.ws_showall.filter_inactive, .ws_showFiltered.filter_inactive {
+    cursor: auto;
+}
+
+.wsProducts .ui-slider-horizontal, .wsProducts .ui-slider-horizontal:hover .nipple {
+    -webkit-transition: all 0.5s ease-out 0s;
+    -moz-transition: all 0.5s ease-out 0s;
+    -ms-transition: all 0.5s ease-out 0s;
+    -o-transition: all 0.5s ease-out 0s;
+    transition: all 0.5s ease-out 0s;
+}
+
+.wsProducts .ui-slider-horizontal:hover {
+    background-color: #655954;
+}
+
+.wsProducts .ui-slider-horizontal:hover .nipple {
+    color: #655954;
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-05-27T10:57:30Z" product-name="ws_products">
+		<header/>
+		<body>
+			<trans-unit id="attribute_name.description">
+				<source>attributeName</source>
+			</trans-unit>
+			<trans-unit id="attribute_description.description">
+				<source>attributeDescription</source>
+			</trans-unit>
+			<trans-unit id="attribute_image.description">
+				<source>attributeImage</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

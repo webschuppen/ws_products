@@ -1,0 +1,37 @@
+<div class="wsProducts productFilterLeft">
+    <div class="lableChooseApplication activeLabel">
+        <ol>
+            <li>
+                <f:translate key="tx_wsproducts_domain_model_product.choose_filter" />
+                <f:translate key="tx_wsproducts_domain_model_product.application" />
+            </li>
+        </ol>
+    </div>
+    <f:for each="{filterArray}" as="application" key="applicationName">
+        <img src="{application.data.icon}" title="{application.data.name}" data-appid="{application.data.uid}" class="wsProducts productFilterIcon" id="filter-{application.data.uid}" />
+    </f:for>
+</div>
+
+<div class="wsProducts productFilterRight">
+    <f:if condition="{category} == 5">
+        <div style="opacity: 0">
+    </f:if>
+    <div class="lableChooseKapa">
+        <ol start="2">
+            <li>
+                :&nbsp;&nbsp;<a class="ws_showall filter_inactive"><f:translate key="tx_wsproducts_domain_model_product.product_showall" /></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="ws_showFiltered filter_inactive"><f:translate key="tx_wsproducts_domain_model_product.product_filter" /></a>
+            </li>
+        </ol>
+    </div>
+    <div class="wsProducts sliderIcons">
+        <span class="wsProducts sliderIconMin"></span>
+        <span class="wsProducts sliderIconMax"></span>
+    </div>
+    <div class="wsProducts productFilterSlider">
+        <select class="wsProducts productFilterSelect" disabled="disabled"><option>&nbsp;</option></select>
+    </div>
+    <f:if condition="{category} == 5">
+        </div>
+    </f:if>
+</div>
+

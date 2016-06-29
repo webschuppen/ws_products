@@ -1,0 +1,44 @@
+
+<f:layout name="Default" />
+
+This template displays a NEW form for the current domain object.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        New.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+    <section class="regularContentArea productEmailReqestForm">
+        <div class="regularContentAreaInnerWrapper">
+            <div class="csc-default">
+                <div class="row">
+
+                    <h2><f:translate key="tx_wsproducts_domain_model_product.formhead1" /></h2>
+                    <h3><f:translate key="tx_wsproducts_domain_model_product.formhead2" /></h3>
+
+                    <f:render partial="EMailRequest/FormErrors" arguments="{object:EMailRequest}" />
+
+                    <f:form action="create" controller="EMailRequest" enctype="multipart/form-data"  name="newEMailRequest" object="{newEMailRequest}">
+
+                        <f:render partial="EMailRequest/FormFields" arguments="{capacityValue: capacityValue, applicationString:applicationString, isApplicationLabel:isApplicationLabel, productName:productName}" />
+
+                        <br/><br/>
+
+                        <div class="submitRow">
+                            <f:form.submit value="<f:translate key='tx_wsproducts_domain_model_product.send_form' />" class="wsProducts productRequestLink" />
+                            <span class="hint"><f:translate key="tx_wsproducts_domain_model_product.required_field" /></span>
+                        </div>
+
+                    </f:form>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+</f:section>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-05-27T10:57:30Z" product-name="ws_products">
+		<header/>
+		<body>
+			<trans-unit id="additional_link_value_value.description">
+				<source>additionalLinkValueValue</source>
+			</trans-unit>
+			<trans-unit id="additional_link.description">
+				<source>additionalLink</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

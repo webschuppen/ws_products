@@ -1,0 +1,16 @@
+<ul class="wsProducts productDetailInfoIcons">
+    <f:for each="{infos}" as="info">
+        <li class="wsProducts productDetailInfoIconsItem" style="left:{info.teaserInfoPositionX}%;top:{info.teaserInfoPositionY}%">
+            <div class="wsProducts productDetailInfoIconsItemOpen">i</div>
+            <div class="wsProducts productDetailInfoIconsItemContent">
+                <div class="wsProducts productDetailInfoIconsItemContentImage"><img src="{info.teaserInfo.teaserInfoImage.originalResource.publicUrl}" /></div>
+                <div class="wsProducts productDetailInfoIconsItemContentText">
+                    <h5 class="wsProducts productDetailInfoIconsItemContentTextHeading">{info.teaserInfo.teaserInfoName}</h5>
+                    <div class="wsProducts productDetailInfoIconsItemContentTextText">
+                        <f:format.raw>{info.teaserInfo.teaserInfoText}</f:format.raw>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </f:for>
+</ul>

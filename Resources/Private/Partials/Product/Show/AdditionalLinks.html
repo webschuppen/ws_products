@@ -1,0 +1,19 @@
+<div class="lableMoreInformation"><f:translate key="tx_wsproducts_domain_model_product.futher_info" /></div>
+<ul class="wsProducts productDetailDetailsLinks">
+    <f:for each="{links}" as="link">
+        <li class="wsProducts productDetailDetailsLink">
+        <f:if condition="{link.additionalLinkValueValue} > 0">
+                <f:then>
+                    <a href="<f:uri.page pageUid='{link.additionalLinkValueValue}'/>{link.additionalLinkTargetHash}" <f:if condition="{link.additionalLinkTarget}">target="_blank"</f:if> class="wsProducts productDetailAdditionalLink"><span class="wsProducts productAdditionalLinkIcon" style="background-image:url({link.additionalLink.additionalLinkIcon.originalResource.publicUrl});"></span>{link.additionalLink.additionalLinkName}</a>
+                </f:then>
+                <f:else>
+                    <a href="{link.additionalLinkValueValue}{link.additionalLinkTargetHash}" <f:if condition="{link.additionalLinkTarget}">target="_blank"</f:if> class="wsProducts productDetailAdditionalLink"><span class="wsProducts productAdditionalLinkIcon" style="background-image:url({link.additionalLink.additionalLinkIcon.originalResource.publicUrl});"></span>{link.additionalLink.additionalLinkName}</a>
+                </f:else>
+            </f:if>
+        </li>
+    </f:for>
+    <!--li class="wsProducts productDetailDetailsLink addCompareLi">
+        <f:link.action action="ajaxcompare" arguments="{product : product}" additionalAttributes="{data-product: '{product.uid}'}" class="wsProducts productDetailAdditionalLink addCompare"><span class="wsProducts productDetailCompare"></span><f:translate key="tx_wsproducts_domain_model_product.product_compare" /></f:link.action>
+    </li-->
+</ul>
+

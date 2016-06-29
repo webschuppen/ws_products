@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="BS Rollen">
+    <serverData>
+      <paths name="BS Rollen">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/typo3_test" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

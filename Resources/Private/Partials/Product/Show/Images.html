@@ -1,0 +1,5 @@
+<ul class="wsProducts productDetailDetailsImages">
+    <f:for each="{images}" as="image">
+        <li class="wsProducts productDetailDetailsImage"><f:image src="{image.originalResource.publicUrl}" additionalAttributes="{data-caption:'{image.originalResource.description}', data-title:'{image.originalResource.title}'}" /></li>
+    </f:for>
+</ul>

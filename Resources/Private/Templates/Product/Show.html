@@ -1,0 +1,66 @@
+
+<f:layout name="Default" />
+
+<f:section name="main">
+<!--f:render partial="Product/Properties" arguments="{product:product}" /-->
+    <div class="wsProducts productDetail product{product.uid}">
+        <section class="wsProducts productDetailHeading">
+            <div class="wsProducts productDetailTeaser productHeaderBackground">
+                <div class="wsProducts productDetailTeaserInner">
+                    <img src="{product.productTeaserImage.originalResource.publicUrl}" />
+                    <f:render partial="Product/Show/TeaserInfo" arguments="{infos:product.teaserInfo}" />
+                </div>
+                <div class="wsProducts productDetailTeaserHeadingContainer">
+                    <h1 class="wsProducts productDetailTeaserHeading1"><f:format.raw>{product.productName}</f:format.raw></h1>
+                    <h2 class="wsProducts productDetailTeaserHeading2"><f:format.raw>{product.productDescription}</f:format.raw></h2>
+                </div>
+            </div>
+            <div class="wsProducts productDetailApplicationDescription">
+                <f:format.raw>{applicationDescription}</f:format.raw>
+            </div>
+        </section>
+        <div class="wsProducts productDetailContent">
+            <div class="wsProducts productDetailContentInner">
+
+                <h3 class="wsProducts productDetailSectionHeading detailDetails"><f:translate key="tx_wsproducts_domain_model_product.one_glance" /></h3>
+                <section class="wsProducts productDetailDetails">
+                    <div class="wsProducts productDetailDetailsAttributes col-md-3">
+                        <f:render partial="Product/Show/Attributes" arguments="{attributes:product.attribute}" />
+                    </div>
+                    <div class="wsProducts productDetailDetailsImageSlider col-md-5">
+                        <f:render partial="Product/Show/Images" arguments="{images:product.productImage}" />
+                    </div>
+                    <div class="wsProducts productDetailDetailsAdditionalLinks col-md-4">
+                        <div class="productDetailDetailsAdditionalLinksInnerWrapper">
+                            <f:render partial="Product/Show/AdditionalLinks" arguments="{links:product.additionalLink,product:product}" />
+                        </div>
+                        <f:link.action action="new" arguments="{product:product.uid}" controller="EMailRequest" class="wsProducts productRequestLink"><f:translate key="tx_wsproducts_domain_model_product.product_inquiry" /></f:link.action>
+                    </div>
+                </section>
+                <f:if condition="{product.accessory}">
+                    <h3 class="wsProducts productDetailSectionHeading detailAccessory"><f:translate key="tx_wsproducts_domain_model_product.accessory" /></h3>
+                    <section class="wsProducts productDetailAccessorySlider">
+                        <f:render partial="Product/Show/Accessory" arguments="{accessories:product.accessory}" />
+                    </section>
+                </f:if>
+
+                <h3 class="wsProducts productDetailSectionHeading technicalData"><f:translate key="tx_wsproducts_domain_model_product.technical_data" /></h3>
+                <section class="wsProducts productDetailTechnicalData">
+                    <f:render partial="Product/Show/TechnicalData" arguments="{technicalData:product.technicalData}"/>
+                </section>
+
+                <!--a href="#" onClick="history.back()" class="wsProducts productDetailBackLink"><f:translate key="tx_wsproducts_domain_model_product.back_to_list" /></a><br /-->
+                <br />
+
+                <a href="#" onClick="window.history.back(); return false;" class="wsProducts backAnkerDetails"><f:translate key="tx_wsproducts_domain_model_product.back_to_list" /></a><br />
+
+                <script type="text/javascript">
+                    if (document.referrer.indexOf(window.location.host) == -1) { 
+                        $("a.wsProducts.backAnkerDetails").remove(); 
+                    }
+                </script>
+
+            </div>
+        </div>
+    </div>
+</f:section>

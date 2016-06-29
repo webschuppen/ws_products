@@ -1,0 +1,9 @@
+<div class="col-md-3 col-sm-3 col-xs-3" id="productHeader-{compareItem.uid}">
+    <div class="previewImage" data-product="{compareItem.uid}">
+        <h2><f:format.stripTags value="{compareItem.productName}" /></h2>
+        <div class="wsProducts filterListImage compareFilterListImage">
+            <img src="{compareItem.productPreviewImage.originalResource.publicUrl}"/>
+            <a class="wsProducts compareRemoveCompare" onClick="ws_products_removeCompare({compareItem.uid})"></a>
+        </div>
+    </div>
+</div>

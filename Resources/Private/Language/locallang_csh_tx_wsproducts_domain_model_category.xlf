@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-05-27T10:57:30Z" product-name="ws_products">
+		<header/>
+		<body>
+			<trans-unit id="category_name.description">
+				<source>categoryName</source>
+			</trans-unit>
+			<trans-unit id="category_description.description">
+				<source>categoryDescription</source>
+			</trans-unit>
+			<trans-unit id="no_filter.description">
+				<source>noFilter</source>
+			</trans-unit>
+			<trans-unit id="backend_only.description">
+				<source>backendOnly</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

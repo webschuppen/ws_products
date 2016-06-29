@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-05-27T10:57:30Z" product-name="ws_products">
+		<header/>
+		<body>
+			<trans-unit id="product_name.description">
+				<source>productName</source>
+			</trans-unit>
+			<trans-unit id="product_short_name.description">
+				<source>productShortName</source>
+			</trans-unit>
+			<trans-unit id="product_preview_image.description">
+				<source>productPreviewImage</source>
+			</trans-unit>
+			<trans-unit id="product_image.description">
+				<source>productImage</source>
+			</trans-unit>
+			<trans-unit id="product_description.description">
+				<source>productDescription</source>
+			</trans-unit>
+			<trans-unit id="product_teaser_image.description">
+				<source>productTeaserImage</source>
+			</trans-unit>
+			<trans-unit id="attribute.description">
+				<source>attribute(s) that clarify this product.</source>
+			</trans-unit>
+			<trans-unit id="technical_data.description">
+				<source>technical enhancement(s) of this product</source>
+			</trans-unit>
+			<trans-unit id="category.description">
+				<source>categorie(s) this product belongs to</source>
+			</trans-unit>
+			<trans-unit id="application.description">
+				<source>application(s) this product belongs to</source>
+			</trans-unit>
+			<trans-unit id="accessory.description">
+				<source>other product(s), wich are accessories for this product</source>
+			</trans-unit>
+			<trans-unit id="teaser_info.description">
+				<source>teaserInfo</source>
+			</trans-unit>
+			<trans-unit id="additional_link.description">
+				<source>additionalLink</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

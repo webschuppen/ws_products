@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2015-05-21T15:52:16Z" product-name="ws_products">
+		<header/>
+		<body>
+			<trans-unit id="tx_wsproducts_domain_model_product">
+				<target>Product</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.product_inquiry">
+				<target>Produktanfrage</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.machinery_consultants">
+				<target>Maschinen-Berater</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.reset">
+				<target>zurücksetzen</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.add_compare">
+				<target>Add Compare</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.print_list">
+				<target>Liste drucken</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.remove_products">
+				<target>Alle Produkte entfernen</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.overview">
+				<target>Überblick</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.close_compare">
+				<target>Vergleichsliste schließen</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.formhead1">
+				<target>Ich interessiere mich für ein echtes Original</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.formhead2">
+				<target>Bitte nehmen Sie Kontakt mit mir auf!</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.required_field">
+				<target>Alle mit * gekennzeichneten Felder sind Pflichtfelder</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.send_form">
+				<target>Anfrage senden</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.thank_you">
+				<target>Vielen Dank!</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.mail_shortly">
+				<target>Wir werden uns in Kürze bei Ihnen melden!</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.product_compare">
+				<target>Produkt vergleichen</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.futher_info">
+				<target>Weitere Informationen:</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.choose_filter">
+				<target>Wählen Sie Ihre</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.product_capacity">
+				<target>Kapazität (kg/Schicht)</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.product_filter">
+				<target>eingrenzen</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.product_showall">
+				<target>alle anzeigen</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.product_name">
+				<target>Product Name</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.product_short_name">
+				<target>Product Short Name</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.product_preview_image">
+				<target>Product Preview Image</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.product_image">
+				<target>Product Image</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.product_description">
+				<target>Product Description</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.product_teaser_image">
+				<target>Product Teaser Image</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.attribute">
+				<target>Attribute</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.technical_data">
+				<target>Technische Daten</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.category">
+				<target>Category</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.application">
+				<target>Anwendung</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.section_length">
+				<target>Abschnittslänge (mm)</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.accessory">
+				<target>Zubehör</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.one_glance">
+				<target>Auf einen Blick</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.back_to_list">
+				<target>Zurück zum Maschinenberater</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.teaser_info">
+				<target>Teaser Info</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_product.additional_link">
+				<target>Additional Link</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_attribute">
+				<target>Attribute</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_attribute.attribute_name">
+				<target>Attribute Name</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_attribute.attribute_description">
+				<target>Attribute Description</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_attribute.attribute_image">
+				<target>Attribute Image</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_technicaldata">
+				<target>Technische Daten</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_technicaldata.technical_data_name">
+				<target>Technical Data Name</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_technicaldata.only_backend">
+				<target>Only Backend</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_technicaldata.is_filter">
+				<target>Is Filter</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_category">
+				<target>Category</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_category.category_name">
+				<target>Category Name</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_category.category_description">
+				<target>Category Description</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_category.no_filter">
+				<target>No Filter</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_category.backend_only">
+				<target>Backend Only</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_application">
+				<target>Application</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_application.application_name">
+				<target>Application Name</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_application.application_icon">
+				<target>Application Icon</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_application.special_case">
+				<target>Special Case</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_teaserinfo">
+				<target>Teaser Info</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_teaserinfo.teaser_info_name">
+				<target>Teaser Info Name</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_teaserinfo.teaser_info_text">
+				<target>Teaser Info Text</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_teaserinfo.teaser_info_image">
+				<target>Teaser Info Image</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_technicaldatavalue">
+				<target>Technical Data Value</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_technicaldatavalue.technical_data_value_value">
+				<target>Technical Data Value Value</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_technicaldatavalue.technical_data_name">
+				<target>Technical Data Name</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_teaserinfoposition">
+				<target>Teaser Info Position</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_teaserinfoposition.teaser_info_position_x">
+				<target>Teaser Info Position X</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_teaserinfoposition.teaser_info_position_y">
+				<target>Teaser Info Position Y</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_teaserinfoposition.teaser_info">
+				<target>Teaser Info</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_applicationdescription">
+				<target>Application Description</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_applicationdescription.application_description_text">
+				<target>Application Description Text</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_applicationdescription.application">
+				<target>Application</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_emailrequest">
+				<target>E Mail Request</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_emailrequest.product_summary">
+				<target>Zusammenfassung Ihrer Produktauswahl:</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_emailrequest.machine">
+				<target>Maschine:</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_emailrequest.application">
+				<target>Anwendung:</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_emailrequest.section_length">
+				<target>Abschnittlänge:</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_emailrequest.capacity">
+				<target>Kapazität:</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_emailrequest.salutation">
+				<target>Anrede*</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_emailrequest.salutation_mr">
+				<target>Herr</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_emailrequest.salutation_ms">
+				<target>Frau</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_emailrequest.e_mail_request_name">
+				<target>Vorname*</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_emailrequest.e_mail_request_last_name">
+				<target>Name*</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_emailrequest.e_mail_request_mail_address">
+				<target>E-Mail*</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_emailrequest.e_mail_request_company">
+				<target>Unternehmen</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_emailrequest.e_mail_request_street_nr">
+				<target>Straße, Haus-Nr.*</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_emailrequest.e_mail_request_postal_code">
+				<target>PLZ*</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_emailrequest.e_mail_request_city">
+				<target>Ort*</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_emailrequest.e_mail_request_phone">
+				<target>Telefon</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_emailrequest.e_mail_request_fax">
+				<target>Fax</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_emailrequest.e_mail_request_message">
+				<target>Ihre Nachricht</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_emailrequest.e_mail_request_filter_x_m_l">
+				<target>E Mail Request Filter X M L</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_emailrequest.product">
+				<target>Product</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_additionallink">
+				<target>Additional Links</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_additionallink.additional_link_name">
+				<target>Additional Link Name</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_additionallink.additional_link_icon">
+				<target>Additional Link Icon</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_additionallinkvalue">
+				<target>Additional Link Value</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_additionallinkvalue.additional_link_value_value">
+				<target>Additional Link Value Value</target>
+			</trans-unit>
+			<trans-unit id="tx_wsproducts_domain_model_additionallinkvalue.additional_link">
+				<target>Additional Link</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

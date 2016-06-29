@@ -1,0 +1,46 @@
+
+<f:layout name="Default" />
+
+This Template is used for Listfilters in ws_products
+
+
+<f:section name="main">
+    <div class="wsProducts filterHeader"></div>
+
+    <section class="regularContentArea">
+        <div class="regularContentAreaInnerWrapper">
+            <div class="csc-default">
+                <f:if condition="{showFilter}">
+                    <div class="wsProducts productFilter">
+                        <h3 class="wsProducts productFilterHeader"><f:translate key="tx_wsproducts_domain_model_product.machinery_consultants" /></h3>
+                        <div id="resetFilter"><f:translate key="tx_wsproducts_domain_model_product.reset" /></div>
+                        <div class="wsProducts productFilterInner">
+                            <f:render partial="Product/List/Filter" arguments="{filterArray:filterArray,category:selectedCategory}" />
+                        </div>
+                    </div>
+                </f:if>
+                <ul class="wsProducts filterList">
+                    <f:for each="{products}" as="product" iteration="i">
+                        <li class="wsProducts filterListItem" id="product-{product.uid}" data-sorting="{i.index}" data-productid="{product.uid}">
+                            <f:link.action action="show" arguments="{product : product}">
+                                <div class="wsProducts filterListImage"><img src="{product.productPreviewImage.originalResource.publicUrl}"/></div>
+                            </f:link.action>
+                            <div class="wsProducts filterListInfos">
+                                <div class="wsProducts filterListTitle"><f:link.action action="show" arguments="{product : product}">{product.productShortName}</f:link.action></div>
+                                <div class="wsProducts filterListControls"><f:link.action action="show" arguments="{product : product}" class="wsProducts FilterListInfoButton productsSprite">Details</f:link.action><!--f:link.action action="ajaxcompare" arguments="{product : product}" additionalAttributes="{data-product: '{product.uid}'}" class="wsProducts addCompare productsSprite"><f:translate key="tx_wsproducts_domain_model_product.reset" /></f:link.action--></div>
+                            </div>
+                            <div class="ajaxLoader"></div>
+                        </li>
+                    </f:for>
+                </ul>
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        var $filterArrayJson='<f:format.raw>{filterArrayJson}</f:format.raw>';
+        var $selectedCategory=<f:format.raw>{selectedCategory}</f:format.raw>;
+        var $pageUid=<f:format.raw>{pid}</f:format.raw>;
+    </script>
+</f:section>

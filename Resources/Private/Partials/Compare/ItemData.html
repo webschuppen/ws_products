@@ -1,0 +1,44 @@
+<div class="col-md-3 col-sm-3 col-xs-3"  id="productAttributes-{compareItem.uid}">
+    <div class="overviewData"">
+        <h2>&nbsp;</h2>
+        <f:for each="{compareItem.attribute}" as="attribute">
+            <div class="wsProducts compareRow">
+            <f:if condition="{attribute} == 1">
+                <f:then>
+                    <div class="yesSign"><img src="typo3conf/ext/ws_products/Resources/Public/Icons/Haken-schwarz-trans.png" /></div>
+                </f:then>
+                <f:else>
+                    &nbsp;
+                </f:else>
+            </f:if>
+            </div>
+        </f:for>
+    </div>
+    <div class="assesoryData">
+        <h2>&nbsp;</h2>
+        <f:for each="{compareItem.accessory}" as="accessory">
+            <div class="wsProducts compareRow">
+                <f:if condition="{accessory} == 1">
+                    <f:then>
+                        <div class="yesSign"><img src="typo3conf/ext/ws_products/Resources/Public/Icons/Haken-schwarz-trans.png" /></div>
+                    </f:then>
+                    <f:else>
+                        &nbsp;
+                    </f:else>
+                </f:if>
+            </div>
+        </f:for>
+    </div>
+    <div class="technicalData">
+        <h2>&nbsp;</h2>
+        <f:for each="{compareItem.technicalData}" as="technicalData">
+            <div class="wsProducts compareRow">
+                {technicalData}&nbsp;
+            </div>
+        </f:for>
+    </div>
+    <br>
+    <div class="technicalData">
+        <f:link.action action="new" arguments="{product:compareItem.uid}" controller="EMailRequest" pageUid="128" class="wsProducts productRequestLink"><f:translate key="tx_wsproducts_domain_model_product.product_inquiry" /></f:link.action>
+    </div>
+</div>

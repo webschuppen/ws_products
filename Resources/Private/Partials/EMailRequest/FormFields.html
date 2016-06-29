@@ -1,0 +1,75 @@
+<div class="col-md-6 col-sm-6 col-xs-12 noPaddingLeft">
+    <select class="salutation" name="tx_wsdepartmentcontactform_pi1[salutation]">
+        <option value=""><f:translate key="tx_wsproducts_domain_model_emailrequest.salutation" /></option>
+        <option value="Herr"><f:translate key="tx_wsproducts_domain_model_emailrequest.salutation_mr" /></option>
+        <option value="Frau"><f:translate key="tx_wsproducts_domain_model_emailrequest.salutation_ms" /></option>
+    </select>
+
+    <br/>
+
+    <div class="col-md-6 col-sm-12 noPaddingLeft">
+        <label for="eMailRequestName">
+            <f:translate key="tx_wsproducts_domain_model_emailrequest.e_mail_request_name" />
+        </label><br/>
+        <f:form.textfield property="eMailRequestName" />
+    </div>
+    <div class="col-md-6 col-sm-12 noPaddingRight">
+        <label for="eMailRequestLastName">
+            <f:translate key="tx_wsproducts_domain_model_emailrequest.e_mail_request_last_name" />
+        </label><br/>
+        <f:form.textfield property="eMailRequestLastName" />
+    </div>
+    <label for="eMailRequestCompany">
+        <f:translate key="tx_wsproducts_domain_model_emailrequest.e_mail_request_company" />
+    </label><br />
+        <f:form.textfield property="eMailRequestCompany" /><br />
+    <label for="eMailRequestStreetNr">
+        <f:translate key="tx_wsproducts_domain_model_emailrequest.e_mail_request_street_nr" />
+    </label><br />
+        <f:form.textfield property="eMailRequestStreetNr" /><br />
+    <div class="col-md-6 col-sm-12 noPaddingLeft">
+        <label for="eMailRequestPostalCode">
+            <f:translate key="tx_wsproducts_domain_model_emailrequest.e_mail_request_postal_code" />
+        </label><br />
+        <f:form.textfield property="eMailRequestPostalCode" />
+    </div>
+    <div class="col-md-6 col-sm-12 noPaddingRight">
+        <label for="eMailRequestCity">
+            <f:translate key="tx_wsproducts_domain_model_emailrequest.e_mail_request_city" />
+        </label><br />
+            <f:form.textfield property="eMailRequestCity" />
+    </div>
+    <label for="eMailRequestPhone">
+        <f:translate key="tx_wsproducts_domain_model_emailrequest.e_mail_request_phone" />
+    </label><br />
+        <f:form.textfield property="eMailRequestPhone" /><br />
+    <label for="eMailRequestFax">
+        <f:translate key="tx_wsproducts_domain_model_emailrequest.e_mail_request_fax" />
+    </label><br />
+        <f:form.textfield property="eMailRequestFax" /><br />
+    <label for="eMailRequestMailAddress">
+        <f:translate key="tx_wsproducts_domain_model_emailrequest.e_mail_request_mail_address" />
+    </label><br />
+        <f:form.textfield property="eMailRequestMailAddress" /><br />
+</div>
+<div class="col-md-6 col-sm-6 col-xs-12">
+    <div class="requestSummary">
+        <div class="requestSummaryInner">
+            <p class="title"><f:translate key="tx_wsproducts_domain_model_emailrequest.product_summary" /></p>
+            <ul class="requestedMaschineInfos">
+                <li><span class="requestSummaryLabel"><f:translate key="tx_wsproducts_domain_model_emailrequest.machine" /></span><span class="requestSummaryValue"><f:format.stripTags value="{productName}" /></span><br/></li>
+                <li><span class="requestSummaryLabel"><f:if condition="{isApplicationLabel}==0">
+                            <f:then><f:translate key="tx_wsproducts_domain_model_emailrequest.application" /></f:then>
+                            <f:else><f:translate key="tx_wsproducts_domain_model_emailrequest.section_length" /></f:else>
+                        </f:if></span><span class="requestSummaryValue">{applicationString}</span><br/></li>
+                <li><span class="requestSummaryLabel"><f:translate key="tx_wsproducts_domain_model_emailrequest.capacity" /></span><span class="requestSummaryValue">{capacityValue}</span></li>
+            </ul>
+        </div>
+    </div>
+    <label for="eMailRequestMessage">
+        <f:translate key="tx_wsproducts_domain_model_emailrequest.e_mail_request_message" />
+    </label><br />
+        <f:form.textarea property="eMailRequestMessage" cols="40" rows="15" /><br />
+
+        <f:form.hidden property="eMailRequestFilterXML" value="{productName}, {applicationString}, {capacityValue}" /><br />
+</div>

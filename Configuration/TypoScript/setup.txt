@@ -1,0 +1,75 @@
+
+plugin.tx_wsproducts {
+	view {
+		templateRootPath = {$plugin.tx_wsproducts.view.templateRootPath}
+		partialRootPath = {$plugin.tx_wsproducts.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_wsproducts.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_wsproducts.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+        skipDefaultArguments = 1
+	}
+}
+
+page.includeCSS {
+    wsproducts = EXT:ws_products/Resources/Public/Css/wsproducts.css
+    wsproductsui = EXT:ws_products/Resources/Public/Css/jquery-ui.min.css
+    tooltipster = EXT:ws_products/Resources/Public/Css/tooltipster.css
+}
+
+page.includeJSFooter {
+    wsproductsimageprev = EXT:ws_products/Resources/Public/Js/ws_productsImages.js
+    wsproductsjqueryui = EXT:ws_products/Resources/Public/Js/jquery-ui.js
+    wsproductstouchpunch = EXT:ws_products/Resources/Public/Js/jquery.ui.touch-punch.js
+    wsproductstooltipster = EXT:ws_products/Resources/Public/Js/jquery.tooltipster.js
+    wsproductsslider = EXT:ws_products/Resources/Public/Js/slider.js
+    wsproductsinit = EXT:ws_products/Resources/Public/Js/init.js
+}
+
+wsProducts_compareAjaxCall = PAGE
+wsProducts_compareAjaxCall {
+  typeNum = 1666
+  config.disableAllHeaderCode = 1
+  config.additionHeaders = Content-type:application/json
+  config.metaCharset = UTF-8
+  10 = COA
+  10 < tt_content.list.20.wsproducts_product
+}
+
+plugin.tx_wsproducts._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-ws-products table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-ws-products table th {
+		font-weight:bold;
+	}
+
+	.tx-ws-products table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)
